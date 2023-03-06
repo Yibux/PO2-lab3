@@ -35,6 +35,7 @@ public class Main {
                 scanner.nextLine();
                 continue;
             }
+            ++counter;
             if(choice > random){
                 System.out.println("Szukana liczba jest mniejsza!");
             }
@@ -43,10 +44,17 @@ public class Main {
             }
             else{
                 System.out.println("Brawo, liczba znaleziona!");
-                break;
+                System.out.println("Liczba prob: " + counter);
+                System.out.println("Czy chcesz zakonczyc granie? tak/nie");
+                String stop = scanner.next();
+                if(stop.equals("tak"))
+                    break;
+                counter = 0;
+                random = rand.nextInt(n);
+                continue;
             }
-            ++counter;
+
         }
-        System.out.println("Liczba prob: " + counter);
+
     }
 }
