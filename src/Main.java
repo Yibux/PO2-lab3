@@ -50,11 +50,25 @@ public class Main {
                 if(stop.equals("tak"))
                     break;
                 counter = 0;
+
+                System.out.print("Podaj liczbe nieujemną: ");
+                try{
+                    n = scanner.nextInt();
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Nie podano liczby!");
+                    System.exit(1);
+                }
+
+                if(n<0){
+                    System.out.println("Wartosc jest mniejsza od 0!");
+                    System.exit(2);
+                }
                 random = rand.nextInt(n);
-                continue;
             }
 
         }
+        scanner.close();
 
     }
 }
